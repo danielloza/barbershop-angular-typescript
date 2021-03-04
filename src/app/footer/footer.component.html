@@ -2,12 +2,24 @@
         <footer>
             <div class="social"><a href="#"><i class="icon ion-social-instagram"></i></a><a href="#"><i class="icon ion-social-twitter"></i></a><a href="#"><i class="icon ion-social-facebook"></i></a></div>
             <ul class="list-inline">
-                <li><a href="#">Home</a></li>
+                <li class="nav-item" routerLinkActive="active">
+                  <a class="nav-link" routerLink="#">Home</a>
+                </li>
                 <li><a href="#">Servicios</a></li>
                 <li><a href="#">Acerca de...</a></li>
-                <li><a href="terms-and-conditions.html">Terminos</a></li>
-                <li><a href="privacypolicy.html">Politica de Privacidad</a></li>
+                <li class="nav-item" routerLinkActive="active">
+                  <a class="nav-link" routerLink="/term-and-conditions">Terminos</a></li>
+                <li class="nav-item" routerLinkActive="active">
+                  <a class="nav-link" routerLink="/privacypolicy">Politica de Privacidad</a></li>
             </ul>
             <p class="copyright"><strong>DMC|Loza BarberShop © 2021 Copyright - </strong>Todos los derechos reservados<a href="https://github.com/danielloza/web-barber-shop"><strong> GitHub</strong></a></p>
         </footer>
     </div>
+
+
+
+    <li class="nav-item" routerLinkActive="active">
+      <a class="nav-link" routerLink="/barbers">
+        <strong>Barberos</strong>
+      </a>
+    </li>

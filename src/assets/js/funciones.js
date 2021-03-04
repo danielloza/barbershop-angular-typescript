@@ -8,3 +8,14 @@ function toggle(elemento) {
       }
   }
 }
+
+//revisar porque no funciona
+function adminHeader(val) {
+  if(val.value=="home") {
+      document.getElementById("data").style.display = "none";
+  }else{
+      if(val.value=="admin"){
+          document.getElementById("data").style.display = "block";
+      }
+  }
+}

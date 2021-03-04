@@ -11,8 +11,26 @@ import { AdminPackagesComponent } from './admin-packages/admin-packages.componen
 import { BarbersComponent } from './barbers/barbers.component';
 import { GalleryComponent } from './gallery/gallery.component';
 import { ServicesComponent } from './services/services.component';
+import { RouterModule, Routes } from '@angular/router';
 import { PrivacypolicyComponent } from './privacypolicy/privacypolicy.component';
 import { TermAndConditionsComponent } from './term-and-conditions/term-and-conditions.component';
+
+//Call Component
+const route: Routes = [
+  {path: '', redirectTo: '/appointments', pathMatch: 'full' },
+  {path: 'barbers', component: BarbersComponent },
+  {path: 'gallery', component: GalleryComponent },
+  {path: 'services', component: ServicesComponent },
+  {path: 'appointments', component: AppointmentsComponent},
+  {path: 'privacypolicy', component: PrivacypolicyComponent},
+  {path: 'term-and-conditions', component: TermAndConditionsComponent},
+
+  {path: 'admin', component: AdminComponent},
+  {path: 'admin-barbers', component: AdminBarbersComponent},
+  {path: 'admin-packages', component: AdminPackagesComponent}
+
+
+];
 
 @NgModule({
   declarations: [
@@ -29,10 +47,12 @@ import { TermAndConditionsComponent } from './term-and-conditions/term-and-condi
     PrivacypolicyComponent,
     TermAndConditionsComponent
   ],
+
   imports: [
-    BrowserModule
+    BrowserModule,
+    RouterModule.forRoot(route)
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {}

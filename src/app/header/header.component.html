@@ -1,11 +1,63 @@
 <nav class="navbar navbar-default navbar-fixed-top">
         <div class="container">
-            <div class="navbar-header"><a class="navbar-brand" href="#"><strong>DMC|Loza</strong> BarberShop</a><button class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button></div>
-            <div
-                class="collapse navbar-collapse" id="navcol-1">
+            <div class="navbar-header">
+              <a class="navbar-brand" href="#"><strong>DMC|Loza</strong> BarberShop</a>
+              <button class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navcol-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span>
+              </button>
+            </div>
+            <div class="collapse navbar-collapse" id="navcol-1">
+              <ul class="nav navbar-nav navbar-right">
+                  <li class="nav-item" routerLinkActive="active">
+                    <a href="#">Home </a></li>
+              </ul>
                 <ul class="nav navbar-nav navbar-right">
-                    <li role="presentation"><a href="#">Home </a></li>
+                    <li class="nav-item" routerLinkActive="active">
+                      <a class="nav-link" routerLink="/admin">Admin </a></li>
                 </ul>
-        </div>
+                <div class="container" id="header-user" >
+                    <div id="barra">
+                        <ul class="nav nav-pills">
+                          <li class="nav-item" routerLinkActive="active">
+                            <a class="nav-link" routerLink="/appointments">
+                              <strong>Citas</strong>
+                            </a>
+                          </li>
+                            <li class="nav-item" routerLinkActive="active">
+                              <a class="nav-link" routerLink="/services">
+                                <strong>Nuestros Servicios</strong>
+                              </a>
+                            </li>
+                            <li class="nav-item" routerLinkActive="active">
+                              <a class="nav-link" routerLink="/barbers">
+                                <strong>Barberos</strong>
+                              </a>
+                            </li>
+                            <li class="nav-item" routerLinkActive="active">
+                              <a class="nav-link" routerLink="/gallery">
+                                <strong>Galeria</strong>
+                              </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="container" id="admin">
+                        <div id="barra">
+                            <ul class="nav nav-pills">
+                                <li class="nav-item" routerLinkActive="active">
+                                  <a class="nav-link" routerLink="/admin"><strong>Servicios</strong></a>
+                                </li>
+                                <li class="nav-item" routerLinkActive="active">
+                                  <a class="nav-link" routerLink="/admin-barbers"><strong>Barberos</strong> </a>
+                                </li>
+                				        <li class="nav-item" routerLinkActive="active">
+                                  <a class="nav-link" routerLink="/admin-packages"><strong>Paquetes</strong> </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+           </div>
         </div>
 </nav>
