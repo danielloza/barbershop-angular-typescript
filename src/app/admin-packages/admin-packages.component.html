@@ -31,45 +31,51 @@
                     <div id="formdiv">
                         <div class="row" style="margin-right:0px;margin-left:0px;padding-top:24px;">
                             <div class="col-md-8 col-md-offset-1">
-                                <p style="margin-left:2%;font-family:Roboto, sans-serif;font-size:24px;"><strong>Nombre del paquete</strong></p>
+                                <p style="margin-left:2%;font-family:Roboto, sans-serif;font-size:24px;"><strong>Nombre del servicio</strong></p>
                             </div>
-                            <div class="col-md-10 col-md-offset-1"><input class="form-control" type="text" name="name" required="" placeholder="Nombre del paquete" style="margin-left:0px;font-family:Roboto, sans-serif;"></div>
+                            <div class="col-md-10 col-md-offset-1"><input class="form-control" type="text" name="nombre" [(ngModel)]="paquete.nombre" required="" placeholder="Nombre del servicio" style="margin-left:0px;font-family:Roboto, sans-serif;"></div>
                         </div>
-						<div class="row" style="margin-right:0px;margin-left:0px;padding-top:24px;">
+					              <div class="row" style="margin-right:0px;margin-left:0px;padding-top:24px;">
                             <div class="col-md-8 col-md-offset-1">
                                 <p style="margin-left:2%;font-family:Roboto, sans-serif;font-size:24px;"><strong>Costo</strong></p>
                             </div>
-                            <div class="col-md-10 col-md-offset-1"><input class="form-control col-2 col-form-label form-control" type="number" placeholder="Costo del paquete"></div>
+                            <div class="col-md-10 col-md-offset-1"><input class="form-control col-2 col-form-label form-control" name="precio" [(ngModel)]="paquete.precio" type="number" placeholder="Costo del servicio"></div>
+                        </div>
+                        <div class="row" style="margin-right:0px;margin-left:0px;padding-top:24px;">
+                            <div class="col-md-8 col-md-offset-1">
+                                <p style="margin-left:2%;font-family:Roboto, sans-serif;font-size:24px;"><strong>Nombre del paquete</strong></p>
+                            </div>
+                            <div class="col-md-10 col-md-offset-1"><input class="form-control" type="text" name="nombrePack" required="" placeholder="Nombre del paquete" [(ngModel)]="paquete.paquete" style="margin-left:0px;font-family:Roboto, sans-serif;"></div>
+                        </div>
+					              <div class="row" style="margin-right:0px;margin-left:0px;padding-top:24px;">
+                            <div class="col-md-8 col-md-offset-1">
+                                <p style="margin-left:2%;font-family:Roboto, sans-serif;font-size:24px;"><strong>Costo</strong></p>
+                            </div>
+                            <div class="col-md-10 col-md-offset-1"><input class="form-control col-2 col-form-label form-control" id="inputPrecioPack" name="precioPack" [(ngModel)]="paquete.precioPack" type="number" placeholder="Costo del paquete"></div>
                         </div>
                         <br>
                         <div class="col-md-10 col-md-offset-1" style="margin-right:0px;margin-left:90px;padding-top:24px;">
                             <table class="table table-responsive table-striped">
                                 <thead>
                                     <tr>
-                                        <th>First Name</th>
-                                        <th>Last Name</th>
-                                        <th>Email</th>
-                                        <th>Acción</th>
+                                        <th style="display: none">Id</th>
+                                        <th>Estilo de Cortes & Precios</th>
+                                        <th>Precios</th>
+                                        <th>Paquetes</th>
+                                        <th>Precios</th>
+                                        <th></th>
+                                        <th></th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <tr>
-                                        <td>John</td>
-                                        <td>Doe</td>
-                                        <td>john@example.com</td>
-                                        <td><button class="btn btn-danger">eliminar</button></td>
-                                    </tr>
-                                    <tr>
-                                        <td>Smith</td>
-                                        <td>Thomas</td>
-                                        <td>smith@example.com</td>
-                                        <td><button class="btn btn-danger">eliminar</button></td>
-                                    </tr>
-                                    <tr>
-                                        <td>Merry</td>
-                                        <td>Jim</td>
-                                        <td>merry@example.com</td>
-                                        <td><button class="btn btn-danger">eliminar</button></td>
+                                    <tr *ngFor="let paquete of paquetes">
+                                        <td style="display: none">{{paquete.id}}</td>
+                                        <td>{{paquete.nombre}}</td>
+                                        <td>${{paquete.precio}}</td>
+                                        <td>{{paquete.paquete}}</td>
+                                        <td>${{paquete.precioPack}}</td>
+                                        <td><button (click)='delete(paquete)' class="btn btn-danger">eliminar</button></td>
+                                        <td><button [routerLink]="['/admin-packages',paquete.id]" class="btn btn-danger">editar</button></td>
                                     </tr>
                                 </tbody>
                             </table>
@@ -78,7 +84,7 @@
                         <div class="row" style="margin-right:0px;margin-left:-70px;padding-top:24px;">
                             <div class="col-md-5 col-md-offset-5 col-xs-12 col-xs-offset-0">
                                 <button class="btn btn-default-clear btn-lg" type="reset" style="font-family:Roboto, sans-serif;">Limpiar </button>
-                                <button class="btn btn-default btn-lg" type="submit" style="margin-left:16px;">Enviar </button>
+                                <button class="btn btn-default btn-lg" role = "button" name="save" (click)='create()' style="margin-left:16px;">Enviar </button>
                                 <button class="btn btn-default-update btn-lg" type="submit" style="margin-left:16px;">Actualizar </button>
                             </div>
                         </div>

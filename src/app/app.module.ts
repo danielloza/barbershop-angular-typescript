@@ -14,6 +14,9 @@ import { ServicesComponent } from './services/services.component';
 import { RouterModule, Routes } from '@angular/router';
 import { PrivacypolicyComponent } from './privacypolicy/privacypolicy.component';
 import { TermAndConditionsComponent } from './term-and-conditions/term-and-conditions.component';
+import { HttpClientModule } from '@angular/common/http';
+import { PackageService } from './admin-packages/package-service';
+import { FormsModule } from '@angular/forms';
 
 //Call Component
 const route: Routes = [
@@ -50,9 +53,12 @@ const route: Routes = [
 
   imports: [
     BrowserModule,
-    RouterModule.forRoot(route)
+    HttpClientModule,
+    RouterModule.forRoot(route),
+    FormsModule
+
   ],
-  providers: [],
+  providers: [PackageService],
   bootstrap: [AppComponent]
 })
 export class AppModule {}
