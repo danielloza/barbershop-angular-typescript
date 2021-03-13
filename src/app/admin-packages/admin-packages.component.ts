@@ -10,7 +10,7 @@ import { PackageService } from './package-service';
 })
 export class AdminPackagesComponent implements OnInit {
 
-paquete: Package = new Package()
+  paquete: Package = new Package()
   paquetes: Package[];
 
   constructor(private packagetoService: PackageService, private router: Router,

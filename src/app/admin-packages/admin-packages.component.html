@@ -4,15 +4,6 @@
         <p>Lo Mejor de Corte Clásico y a Tijera.</p>
     </div>
 </div>
-<!--<div class="container">
-    <div id="barra">
-        <ul class="nav nav-pills">
-            <li><a href="admin.html"><strong>Servicios</strong></a></li>
-            <li><a href="admin-barbers.html"><strong>Barberos</strong> </a></li>
-    <li class="active"><a href="admin-packages.html"><strong>Paquetes</strong> </a></li>
-        </ul>
-    </div>
-</div>-->
 
 <div class="container">
 <div class="row">
@@ -74,8 +65,8 @@
                                         <td>${{paquete.precio}}</td>
                                         <td>{{paquete.paquete}}</td>
                                         <td>${{paquete.precioPack}}</td>
-                                        <td><button (click)='delete(paquete)' class="btn btn-danger">eliminar</button></td>
-                                        <td><button [routerLink]="['/admin-packages',paquete.id]" class="btn btn-danger">editar</button></td>
+                                        <td><button (click)='delete(paquete)' class="btn btn-danger"> Eliminar</button></td>
+                                        <td><button type="button"  [routerLink]="['/admin-packages',paquete.id]" class="btn btn-outline-secondary">  Editar </button></td>
                                     </tr>
                                 </tbody>
                             </table>

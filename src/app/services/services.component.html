@@ -5,16 +5,6 @@
             <p><a class="btn btn-default" role="button" routerLink="/appointments">¡Haz tu cita ahora!</a></p>
         </div>
     </div>
-    <!--<div class="container">
-        <div id="barra">
-            <ul class="nav nav-pills">
-                <li class="active"><a href="#"><strong>Nuestros Servicios</strong></a></li>
-                <li><a href="barbers.html"><strong>Barberos</strong> </a></li>
-                <li><a href="appointments.html"><strong>Citas</strong> </a></li>
-                <li><a href="gallery.html"><strong>Galeria</strong> </a></li>
-            </ul>
-        </div>
-    </div>-->
     <div id="empresa" style="padding:20px;margin:1px;">
         <div class="container">
             <div class="row">
@@ -38,6 +28,7 @@
                         <table class="table">
                             <thead>
                                 <tr>
+                                    <th style="display: none">Id</th>
                                     <th><strong>Estilo de Cortes &amp; Precios</strong> </th>
                                     <th><strong>Precios</strong> </th>
                                     <th><strong>Paquetes</strong> </th>
@@ -45,29 +36,12 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr>
-                                    <td>Corte de Pelo (Caballero)</td>
-                                    <td> $150.00</td>
-                                    <td><strong>Clásico:</strong> Corte de Pelo &amp; Afeitado Clásico </td>
-                                    <td>$250.00 </td>
-                                </tr>
-                                <tr>
-                                    <td>Corte de Pelo (Niño)</td>
-                                    <td> $100.00</td>
-                                    <td><strong>Naval:</strong> Corte de Pelo,  Afeitado Clásico &amp; Limpieza Facial</td>
-                                    <td>$350.00 </td>
-                                </tr>
-                                <tr>
-                                    <td><strong>Recorte Alineado:</strong> Barba &amp; Bigote</td>
-                                    <td> $100.00</td>
-                                    <td><strong>Fresh:</strong> Corte de Pelo,  Afeitado Clásico, Limpieza Facial &amp; Depilación Ceja&nbsp; </td>
-                                    <td>$450.00 </td>
-                                </tr>
-                                <tr>
-                                    <td> Limpieza Facial</td>
-                                    <td> $80.00</td>
-                                    <td><strong>Premium:</strong> Corte de Pelo,  Afeitado Clásico, Limpieza Facial, Depilación Ceja &amp; Tinte </td>
-                                    <td>$550.00 </td>
+                              <tr *ngFor="let paquete of paquetes">
+                                   <td style="display: none">{{paquete.id}}</td>
+                                   <td>{{paquete.nombre}}</td>
+                                   <td>${{paquete.precio}}</td>
+                                   <td>{{paquete.paquete}}</td>
+                                   <td>${{paquete.precioPack}}</td>
                                 </tr>
                             </tbody>
                         </table>

@@ -17,6 +17,7 @@ import { TermAndConditionsComponent } from './term-and-conditions/term-and-condi
 import { HttpClientModule } from '@angular/common/http';
 import { PackageService } from './admin-packages/package-service';
 import { FormsModule } from '@angular/forms';
+//import { FormComponent } from './admin-packages/form.component';
 
 //Call Component
 const route: Routes = [
@@ -31,6 +32,8 @@ const route: Routes = [
   {path: 'admin', component: AdminComponent},
   {path: 'admin-barbers', component: AdminBarbersComponent},
   {path: 'admin-packages', component: AdminPackagesComponent}
+  //{path: 'admin-packages/form', component: FormComponent },
+  //{path: 'admin-packages/form/:id', component: FormComponent }
 
 
 ];
@@ -49,6 +52,7 @@ const route: Routes = [
     ServicesComponent,
     PrivacypolicyComponent,
     TermAndConditionsComponent
+
   ],
 
   imports: [
