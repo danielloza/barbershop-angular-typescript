@@ -10,13 +10,15 @@
             <div class="collapse navbar-collapse" id="navcol-1">
               <ul class="nav navbar-nav navbar-right">
                   <li class="nav-item" routerLinkActive="active">
-                    <a href="#">Home </a></li>
+                      <button type="button" routerLink="/appointments" (click)="setHabilitar()" class="btn btn-primary my-3" name="button">Home</button>
+                    <!--<a href="#" >Home </a>--></li>
               </ul>
                 <ul class="nav navbar-nav navbar-right">
                     <li class="nav-item" routerLinkActive="active">
-                      <a class="nav-link" routerLink="/admin">Admin </a></li>
+                      <!--<a class="nav-link" onclick="setHabilitar();" routerLink="/admin">Admin </a></li>-->
+                      <button type="button" routerLink="/admin" (click)="setDesabilitar()" class="btn btn-primary my-3" name="button">Admin</button>
                 </ul>
-                <div class="container" id="header-user" >
+                <div class="fileContainer" id="header-user"  *ngIf="habilitar">
                     <div id="barra">
                         <ul class="nav nav-pills">
                           <li class="nav-item" routerLinkActive="active">
@@ -41,23 +43,23 @@
                             </li>
                         </ul>
                     </div>
-                    <div class="container" id="admin">
-                        <div id="barra">
-                            <ul class="nav nav-pills">
-                                <li class="nav-item" routerLinkActive="active">
-                                  <a class="nav-link" routerLink="/admin"><strong>Servicios</strong></a>
-                                </li>
-                                <li class="nav-item" routerLinkActive="active">
-                                  <a class="nav-link" routerLink="/admin-barbers"><strong>Barberos</strong> </a>
-                                </li>
-                				        <li class="nav-item" routerLinkActive="active">
-                                  <a class="nav-link" routerLink="/admin-packages"><strong>Paquetes</strong> </a>
-                                </li>
-                            </ul>
-                        </div>
+                </div>
+                <div class="container"  id="admin"  *ngIf="desahabilitar">
+                    <div id="barra">
+                        <ul class="nav nav-pills">
+                            <li class="nav-item" routerLinkActive="active">
+                              <a class="nav-link" routerLink="/admin"><strong>Servicios</strong></a>
+                            </li>
+                            <li class="nav-item" routerLinkActive="active">
+                              <a class="nav-link" routerLink="/admin-barbers"><strong>Barberos</strong> </a>
+                            </li>
+                            <li class="nav-item" routerLinkActive="active">
+                              <a class="nav-link" routerLink="/admin-packages"><strong>Paquetes</strong> </a>
+                            </li>
+                        </ul>
                     </div>
                 </div>
-
            </div>
+
         </div>
 </nav>

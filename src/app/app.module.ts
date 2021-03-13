@@ -17,6 +17,7 @@ import { TermAndConditionsComponent } from './term-and-conditions/term-and-condi
 import { HttpClientModule } from '@angular/common/http';
 import { PackageService } from './admin-packages/package-service';
 import { FormsModule } from '@angular/forms';
+import { AppRoutingModule } from './app-routing.module';
 //import { FormComponent } from './admin-packages/form.component';
 
 //Call Component
