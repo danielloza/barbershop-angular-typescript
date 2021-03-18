@@ -1,0 +1,82 @@
+<div id="promo">
+    <div class="jumbotron">
+        <h1>Bienvenido Administrador</h1>
+        <p>Lo Mejor de Corte Clásico y a Tijera.</p>
+    </div>
+</div>
+
+<div class="container">
+<div class="row">
+  <div class="col-lg-7 col-md-7 col-sm-6">
+    <h1>Registro de nuevos paquetes</h1>
+    <p>Llene el formulario con los datos del paquete.</p>
+  </div>
+  <div class="col-lg-5 col-md-5 col-sm-6" style="height:150px;"></div>
+</div>
+</div>
+<div class="container">
+      <div class="card-body text-primary">
+          <form #paquetesForm="ngForm">
+              <div class="form-group">
+                  <div id="formdiv">
+                      <div class="row" style="margin-right:0px;margin-left:0px;padding-top:24px;">
+                          <div class="col-md-8 col-md-offset-1">
+                              <p style="margin-left:2%;font-family:Roboto, sans-serif;font-size:24px;"><strong>Nombre del servicio</strong></p>
+                          </div>
+                          <div class="col-md-10 col-md-offset-1"><input class="form-control" type="text"  name="nombre" #nombre="ngModel" [(ngModel)]="paquete.nombre" required placeholder="Nombre del servicio" style="margin-left:0px;font-family:Roboto, sans-serif;">
+                            <div class="alert alert-danger" *ngIf="nombre.invalid && (nombre.dirty || nombre.touched)">
+                                <div *ngIf="nombre.errors.required">
+                                  Nombre es requerido
+                                </div>
+                            </div>
+                          </div>
+                      </div>
+                      <div class="row" style="margin-right:0px;margin-left:0px;padding-top:24px;">
+                          <div class="col-md-8 col-md-offset-1">
+                              <p style="margin-left:2%;font-family:Roboto, sans-serif;font-size:24px;"><strong>Costo</strong></p>
+                          </div>
+                          <div class="col-md-10 col-md-offset-1"><input class="form-control col-2 col-form-label form-control" required name="precio" #precio="ngModel" [(ngModel)]="paquete.precio" type="number" placeholder="Costo del servicio">
+                            <div class="alert alert-danger" *ngIf="precio.invalid && (precio.dirty || precio.touched)">
+                                <div *ngIf="precio.errors.required">
+                                  Nombre es requerido
+                                </div>
+                            </div>
+                          </div>
+                      </div>
+                      <div class="row" style="margin-right:0px;margin-left:0px;padding-top:24px;">
+                          <div class="col-md-8 col-md-offset-1">
+                              <p style="margin-left:2%;font-family:Roboto, sans-serif;font-size:24px;"><strong>Nombre del paquete</strong></p>
+                          </div>
+                          <div class="col-md-10 col-md-offset-1"><input class="form-control" type="text" name="nombrePack" #nombrePack="ngModel" required placeholder="Nombre del paquete" [(ngModel)]="paquete.paquete" style="margin-left:0px;font-family:Roboto, sans-serif;">
+                            <div class="alert alert-danger" *ngIf="nombrePack.invalid && (nombrePack.dirty || nombrePack.touched)">
+                                <div *ngIf="nombrePack.errors.required">
+                                  Nombre es requerido
+                                </div>
+                            </div>
+                          </div>
+                      </div>
+                      <div class="row" style="margin-right:0px;margin-left:0px;padding-top:24px;">
+                          <div class="col-md-8 col-md-offset-1">
+                              <p style="margin-left:2%;font-family:Roboto, sans-serif;font-size:24px;"><strong>Costo</strong></p>
+                          </div>
+                          <div class="col-md-10 col-md-offset-1"><input class="form-control col-2 col-form-label form-control" required id="inputPrecioPack" name="precioPack" #precioPack="ngModel" [(ngModel)]="paquete.precioPack" type="number" placeholder="Costo del paquete">
+                            <div class="alert alert-danger" *ngIf="precioPack.invalid && (precioPack.dirty || precioPack.touched)">
+                                <div *ngIf="precioPack.errors.required">
+                                  Nombre es requerido
+                                </div>
+                            </div>
+                          </div>
+                      </div>
+                      <br>
+                      <div class="row" style="margin-right:0px;margin-left:-70px;padding-top:24px;">
+                          <div class="col-md-5 col-md-offset-5 col-xs-12 col-xs-offset-0">
+                              <button class="btn btn-default-clear btn-lg" type="reset" style="font-family:Roboto, sans-serif;">Limpiar </button>
+                              <button class="btn btn-default btn-lg" role = "button" name="save" (click)='create()' [disabled]="!paquetesForm.form.valid" style="margin-left:16px;">Agregar </button>
+                              <button class="btn btn-default-update btn-lg" name="update" role = "button"  (click)='update()' [disabled]="!paquetesForm.form.valid" style="margin-left:16px;">Actualizar </button>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </form>
+      </div>
+  </div>

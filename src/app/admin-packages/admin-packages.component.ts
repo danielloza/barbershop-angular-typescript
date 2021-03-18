@@ -20,7 +20,7 @@ export class AdminPackagesComponent implements OnInit {
     this.packagetoService.getPackages().subscribe(
       (paquetes) => this.paquetes = paquetes
     );
-    this.cargarPaquete();
+    //this.cargarPaquete();
   }
 
   delete(paquete: Package): void{
@@ -66,30 +66,4 @@ export class AdminPackagesComponent implements OnInit {
       }
     })
   }
-
-  create(): void{
-    this.packagetoService.create(this.paquete)
-    .subscribe(paquete => {
-      this.router.navigate(['/admin-packages'])
-        Swal.fire('Nuevo paquete', `Paquete ${paquete.nombre} creado con éxito!`, 'success')
-      }
-    )
-  }
-
-  cargarPaquete(): void{
-    this.activatedRoute.params.subscribe(params => {
-      let id = params['id']
-      if(id){
-        this.packagetoService.getPaquete(id).subscribe((paquete) => this.paquete = paquete)
-      }
-    })
-  }
-
-  update(): void{
-      this.packagetoService.update(this.paquete).subscribe( paquete => {
-        this.router.navigate(['/agregarProd'])
-        Swal.fire('Producto Actualizado', `Producto ${paquete.nombre} actualizado con éxito!`, 'success')
-      })
-    }
-
 }

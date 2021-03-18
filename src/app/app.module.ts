@@ -17,8 +17,8 @@ import { TermAndConditionsComponent } from './term-and-conditions/term-and-condi
 import { HttpClientModule } from '@angular/common/http';
 import { PackageService } from './admin-packages/package-service';
 import { FormsModule } from '@angular/forms';
-import { AppRoutingModule } from './app-routing.module';
-//import { FormComponent } from './admin-packages/form.component';
+import { FormComponent } from './admin-packages/form.component';
+import { FormBarberComponent } from './admin-barbers/form-barber.component';
 
 //Call Component
 const route: Routes = [
@@ -32,10 +32,11 @@ const route: Routes = [
 
   {path: 'admin', component: AdminComponent},
   {path: 'admin-barbers', component: AdminBarbersComponent},
-  {path: 'admin-packages', component: AdminPackagesComponent}
-  //{path: 'admin-packages/form', component: FormComponent },
-  //{path: 'admin-packages/form/:id', component: FormComponent }
-
+  {path: 'admin-packages', component: AdminPackagesComponent},
+  {path: 'admin-packages/form', component: FormComponent },
+  {path: 'admin-packages/form/:id', component: FormComponent },
+  {path: 'admin-barbers/form', component: FormBarberComponent },
+  {path: 'admin-barbers/form/:id', component: FormBarberComponent }
 
 ];
 
@@ -52,15 +53,18 @@ const route: Routes = [
     GalleryComponent,
     ServicesComponent,
     PrivacypolicyComponent,
-    TermAndConditionsComponent
+    TermAndConditionsComponent,
+    FormComponent,
+    FormBarberComponent
 
   ],
 
   imports: [
     BrowserModule,
     HttpClientModule,
-    RouterModule.forRoot(route),
-    FormsModule
+    FormsModule,
+    RouterModule.forRoot(route)
+
 
   ],
   providers: [PackageService],

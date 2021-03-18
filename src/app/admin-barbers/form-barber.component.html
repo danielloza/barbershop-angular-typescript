@@ -1,0 +1,91 @@
+<div id="promo">
+    <div class="jumbotron">
+        <h1>Bienvenido Administrador</h1>
+        <p>Lo Mejor de Corte Clásico y a Tijera.</p>
+    </div>
+</div>
+<div class="container">
+    <div class="row">
+        <div class="col-lg-7 col-md-7 col-sm-6">
+            <h1>Registro de nuevos barberos</h1>
+            <p>Llene el formulario con los datos del nuevo barbero(a).</p>
+        </div>
+        <div class="col-lg-5 col-md-5 col-sm-6" style="height:150px;"></div>
+    </div>
+</div>
+<div class="container">
+    <div>
+        <form #barbersForm="ngForm">
+            <div class="form-group">
+                  <div id="formdiv">
+                    <div class="row" style="margin-right:0px;margin-left:0px;padding-top:24px;">
+                        <div class="col-md-8 col-md-offset-1">
+                            <p style="margin-left:2%;font-family:Roboto, sans-serif;font-size:24px;"><strong>Nombre del Barbero (a)</strong></p>
+                        </div>
+                        <div class="col-md-10 col-md-offset-1"><input class="form-control" type="text"  name="nombre" #nombre="ngModel" [(ngModel)]="barber.nombre" required placeholder="Nombre del Barbero (a)" style="margin-left:0px;font-family:Roboto, sans-serif;">
+                          <div class="alert alert-danger" *ngIf="nombre.invalid && (nombre.dirty || nombre.touched)">
+                              <div *ngIf="nombre.errors.required">
+                                Nombre es requerido
+                              </div>
+                          </div>
+                        </div>
+                    </div>
+                    <div class="row" style="margin-right:0px;margin-left:0px;padding-top:24px;">
+                        <div class="col-md-8 col-md-offset-1">
+                            <p style="margin-left:2%;font-family:Roboto, sans-serif;font-size:24px;"><strong>Puesto</strong></p>
+                        </div>
+                        <div class="col-md-10 col-md-offset-1"><input class="form-control" type="text"  name="puesto" #puesto="ngModel" [(ngModel)]="barber.puesto" required placeholder="Puesto" style="margin-left:0px;font-family:Roboto, sans-serif;">
+                          <div class="alert alert-danger" *ngIf="puesto.invalid && (puesto.dirty || puesto.touched)">
+                              <div *ngIf="puesto.errors.required">
+                                Puesto es requerido
+                              </div>
+                          </div>
+                        </div>
+                    </div>
+                    <div class="row" style="margin-right:0px;margin-left:0px;padding-top:24px;">
+                        <div class="col-md-8 col-md-offset-1">
+                            <p style="margin-left:2%;font-family:Roboto, sans-serif;font-size:24px;"><strong>Especialidad</strong></p>
+                        </div>
+                        <div class="col-md-10 col-md-offset-1"><input class="form-control" type="text"  name="especialidad" #especialidad="ngModel" [(ngModel)]="barber.especialidad" required placeholder="Especialidad" style="margin-left:0px;font-family:Roboto, sans-serif;">
+                          <div class="alert alert-danger" *ngIf="especialidad.invalid && (especialidad.dirty || especialidad.touched)">
+                              <div *ngIf="especialidad.errors.required">
+                                Especialidad es requerido
+                              </div>
+                          </div>
+                        </div>
+                    </div>
+                    <!--<div class="row" style="margin-right:0px;margin-left:0px;padding-top:24px;">
+						         	<div class="col-md-8 col-md-offset-1">
+							              	<p style="margin-left:2%;font-family:Roboto, sans-serif;font-size:24px;"><strong>Red Social</strong></p>
+							            </div>
+							            <div class="col-md-10 col-md-offset-1">
+                            <input class="form-control" type="url" name="name" required="" placeholder="Red Social" style="margin-left:0px;font-family:Roboto, sans-serif;">
+							            </div>
+          								<div class="col-md-8 col-md-offset-1">
+          									<p style="margin-left:2%;font-family:Roboto, sans-serif;font-size:24px;"><strong>Estatus del Barbero.</strong></p>
+          								</div>
+          								<div class="col-md-10 col-md-offset-1">
+          									<label class="custom-control custom-radio">
+          										<input id="radio1" name="radio" type="radio" class="custom-control-input">
+          											<span class="custom-control-indicator"></span>
+          											<span class="custom-control-description">Activo</span>
+          									</label>
+          									<label class="custom-control custom-radio">
+          										 <input id="radio2" name="radio" type="radio" class="custom-control-input">
+          										 <span class="custom-control-indicator"></span>
+          										 <span class="custom-control-description">Ocupado</span>
+          									</label>
+          								</div>
+							        </div>-->
+                      <div class="row" style="margin-right:0px;margin-left:-70px;padding-top:24px;">
+                            <div class="col-md-5 col-md-offset-5 col-xs-12 col-xs-offset-0">
+                              <button class="btn btn-default-clear btn-lg" type="reset" style="font-family:Roboto, sans-serif;">Limpiar </button>
+                              <button class="btn btn-default btn-lg" role = "button" name="save" (click)='create()' [disabled]="!barbersForm.form.valid" style="margin-left:16px;">Agregar </button>
+                              <button class="btn btn-default-update btn-lg" name="update" role = "button"  (click)='update()' [disabled]="!barbersForm.form.valid" style="margin-left:16px;">Actualizar </button>
+                            </div>
+                      </div>
+                  </div>
+            </div>
+        </form>
+    </div>
+</div>

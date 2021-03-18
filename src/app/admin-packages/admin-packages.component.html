@@ -4,52 +4,32 @@
         <p>Lo Mejor de Corte Clásico y a Tijera.</p>
     </div>
 </div>
-
 <div class="container">
-<div class="row">
-  <div class="col-lg-7 col-md-7 col-sm-6">
-    <h1>Registro de nuevos paquetes</h1>
-    <p>Llene el formulario con los datos del paquete.</p>
+  <div class="row">
+    <div class="col-lg-7 col-md-7 col-sm-6">
+      <h1>Registro de nuevos paquetes</h1>
+      <p>Llene el formulario con los datos del paquete.</p>
+    </div>
+    <div class="col-lg-5 col-md-5 col-sm-6" style="height:150px;"></div>
   </div>
-  <div class="col-lg-5 col-md-5 col-sm-6" style="height:150px;"></div>
 </div>
-</div>
-
+<div class="card border-primary mb-3">
+<div class="col-md-10 col-md-offset-1" style="margin-right:0px;margin-left:90px;padding-top:24px;">
 	<div class="container">
         <div>
             <form>
                 <div class="form-group">
                     <div id="formdiv">
-                        <div class="row" style="margin-right:0px;margin-left:0px;padding-top:24px;">
-                            <div class="col-md-8 col-md-offset-1">
-                                <p style="margin-left:2%;font-family:Roboto, sans-serif;font-size:24px;"><strong>Nombre del servicio</strong></p>
-                            </div>
-                            <div class="col-md-10 col-md-offset-1"><input class="form-control" type="text" name="nombre" [(ngModel)]="paquete.nombre" required="" placeholder="Nombre del servicio" style="margin-left:0px;font-family:Roboto, sans-serif;"></div>
-                        </div>
-					              <div class="row" style="margin-right:0px;margin-left:0px;padding-top:24px;">
-                            <div class="col-md-8 col-md-offset-1">
-                                <p style="margin-left:2%;font-family:Roboto, sans-serif;font-size:24px;"><strong>Costo</strong></p>
-                            </div>
-                            <div class="col-md-10 col-md-offset-1"><input class="form-control col-2 col-form-label form-control" name="precio" [(ngModel)]="paquete.precio" type="number" placeholder="Costo del servicio"></div>
-                        </div>
-                        <div class="row" style="margin-right:0px;margin-left:0px;padding-top:24px;">
-                            <div class="col-md-8 col-md-offset-1">
-                                <p style="margin-left:2%;font-family:Roboto, sans-serif;font-size:24px;"><strong>Nombre del paquete</strong></p>
-                            </div>
-                            <div class="col-md-10 col-md-offset-1"><input class="form-control" type="text" name="nombrePack" required="" placeholder="Nombre del paquete" [(ngModel)]="paquete.paquete" style="margin-left:0px;font-family:Roboto, sans-serif;"></div>
-                        </div>
-					              <div class="row" style="margin-right:0px;margin-left:0px;padding-top:24px;">
-                            <div class="col-md-8 col-md-offset-1">
-                                <p style="margin-left:2%;font-family:Roboto, sans-serif;font-size:24px;"><strong>Costo</strong></p>
-                            </div>
-                            <div class="col-md-10 col-md-offset-1"><input class="form-control col-2 col-form-label form-control" id="inputPrecioPack" name="precioPack" [(ngModel)]="paquete.precioPack" type="number" placeholder="Costo del paquete"></div>
-                        </div>
-                        <br>
-                        <div class="col-md-10 col-md-offset-1" style="margin-right:0px;margin-left:90px;padding-top:24px;">
+                        <div >
+                          <br>
+                          <div class="my-2 text-left">
+                            <button class="btn btn-rounded btn-primary" style = "position: absolute; top: 28px; left: 106px;" type="button" [routerLink] = "['/admin-packages/form']">Crear Paquetes</button>
+                          </div>
+                          <br>
                             <table class="table table-responsive table-striped">
                                 <thead>
                                     <tr>
-                                        <th style="">Id</th>
+                                        <th style="display:none">Id</th>
                                         <th>Estilo de Cortes & Precios</th>
                                         <th>Precios</th>
                                         <th>Paquetes</th>
@@ -60,27 +40,20 @@
                                 </thead>
                                 <tbody>
                                     <tr *ngFor="let paquete of paquetes">
-                                        <td style="">{{paquete.id}}</td>
+                                        <td  style="display:none">{{paquete.id}}</td>
                                         <td>{{paquete.nombre}}</td>
                                         <td>${{paquete.precio}}</td>
                                         <td>{{paquete.paquete}}</td>
                                         <td>${{paquete.precioPack}}</td>
                                         <td><button (click)='delete(paquete)' class="btn btn-danger"> Eliminar</button></td>
-                                        <td><button type="button"  [routerLink]="['/admin-packages',paquete.id]" class="btn btn-outline-secondary">  Editar </button></td>
+                                        <td><button type="button"  [routerLink]="['/admin-packages/form',paquete.id]" class="btn btn-outline-secondary">  Editar </button></td>
                                     </tr>
                                 </tbody>
                             </table>
-                        </div>
-                        <br>
-                        <div class="row" style="margin-right:0px;margin-left:-70px;padding-top:24px;">
-                            <div class="col-md-5 col-md-offset-5 col-xs-12 col-xs-offset-0">
-                                <button class="btn btn-default-clear btn-lg" type="reset" style="font-family:Roboto, sans-serif;">Limpiar </button>
-                                <button class="btn btn-default btn-lg" role = "button" name="save" (click)='create()' style="margin-left:16px;">Enviar </button>
-                                <button class="btn btn-default-update btn-lg" type="submit" style="margin-left:16px;">Actualizar </button>
-                            </div>
                         </div>
                     </div>
                 </div>
             </form>
         </div>
     </div>
+</div>
