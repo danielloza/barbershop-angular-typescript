@@ -19,6 +19,7 @@ import { PackageService } from './admin-packages/package-service';
 import { FormsModule } from '@angular/forms';
 import { FormComponent } from './admin-packages/form.component';
 import { FormBarberComponent } from './admin-barbers/form-barber.component';
+import {AppointmentsService } from './appointments/appointments-service';
 
 //Call Component
 const route: Routes = [
@@ -56,7 +57,6 @@ const route: Routes = [
     TermAndConditionsComponent,
     FormComponent,
     FormBarberComponent
-
   ],
 
   imports: [

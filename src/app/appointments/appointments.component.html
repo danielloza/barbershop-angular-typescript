@@ -1,56 +1,58 @@
 <div id="promo">
-        <div class="jumbotron">
-            <h1>Bienvenidos</h1>
-            <p>Lo Mejor de Corte Clásico y a Tijera.</p>
-            <p><a class="btn btn-default" role="button" href="#divAppoint">¡Haz tu cita ahora!</a></p>
-        </div>
+  <div class="jumbotron">
+    <h1>Bienvenidos</h1>
+      <p>Lo Mejor de Corte Clásico y a Tijera.</p>
+      <p><a class="btn btn-default" role="button" href="#divAppoint">¡Haz tu cita ahora!</a></p>
+  </div>
+</div>
+<div id="empresa" style="padding:20px;margin:1px;">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-7 col-md-7 col-sm-6">
+        <h1>Citas </h1>
+        <p>Para su cita por favor sea al menos 10 minutos antes de la hora. De esta manera podemos brindar un servicio de calidad y sin ningún inconveniente.</p>
+      </div>
+      <div class="col-lg-5 col-md-5 col-sm-6" style="height:265px;">
+        <img src="assets/img/prices.jpg" style="height:285px;">
+      </div>
     </div>
-    <div id="empresa" style="padding:20px;margin:1px;">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-7 col-md-7 col-sm-6">
-                    <h1>Citas </h1>
-                    <p>Para su cita por favor sea al menos 10 minutos antes de la hora. De esta manera podemos brindar un servicio de calidad y sin ningún inconveniente.</p>
-                </div>
-                <div class="col-lg-5 col-md-5 col-sm-6" style="height:265px;"><img src="assets/img/prices.jpg" style="height:285px;"></div>
-            </div>
+  </div>
+  <div class="container" id="divAppoint">
+    <div class="row">
+      <div class="col-md-3">
+        <h1>Precios </h1>
+      </div>
+      <div class="col-md-12">
+        <p> </p>
+        <div class="table-responsive">
+          <table class="table">
+            <thead>
+              <tr>
+                <th style="display: none">Id</th>
+                <th><strong>Estilo de Cortes &amp; Precios</strong> </th>
+                <th><strong>Precios</strong> </th>
+                <th><strong>Paquetes</strong> </th>
+                <th style="width:108px;">Precios </th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let paquete of paquetes">
+                <td style="display: none">{{paquete.id}}</td>
+                <td>{{paquete.nombre}}</td>
+                <td>${{paquete.precio}}</td>
+                <td>{{paquete.paquete}}</td>
+                <td>${{paquete.precioPack}}</td>
+              </tr>
+            </tbody>
+          </table>
         </div>
-        <div class="container" id="divAppoint">
-            <div class="row">
-                <div class="col-md-3">
-                    <h1>Precios </h1>
-                </div>
-                <div class="col-md-12">
-                    <p> </p>
-                    <div class="table-responsive">
-                        <table class="table">
-                            <thead>
-                                <tr>
-                                  <th style="display: none">Id</th>
-                                    <th><strong>Estilo de Cortes &amp; Precios</strong> </th>
-                                    <th><strong>Precios</strong> </th>
-                                    <th><strong>Paquetes</strong> </th>
-                                    <th style="width:108px;">Precios </th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr *ngFor="let paquete of paquetes">
-                                    <td style="display: none">{{paquete.id}}</td>
-                                    <td>{{paquete.nombre}}</td>
-                                    <td>${{paquete.precio}}</td>
-                                    <td>{{paquete.paquete}}</td>
-                                    <td>${{paquete.precioPack}}</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-            </div>
-        </div>
+      </div>
     </div>
-    <div class="container">
+  </div>
+</div>
+<div class="container">
     <div>
-        <form>
+        <form #appointmentsForm="ngForm">
             <div class="form-group">
                 <div id="formdiv">
                     <div class="row" style="margin-right:0px;margin-left:0px;padding-top:24px;">
@@ -60,43 +62,53 @@
                         <div class="col-md-8 col-md-offset-1">
                             <p style="margin-left:2%;font-family:Roboto, sans-serif;font-size:24px;"><strong>Nombre Completo </strong></p>
                         </div>
-                        <div class="col-md-10 col-md-offset-1"><input class="form-control" type="text" name="name" required="" placeholder="Nombre" style="margin-left:0px;font-family:Roboto, sans-serif;"></div>
+                        <div class="col-md-10 col-md-offset-1">
+                          <input class="form-control" type="text" name="nombreClient" required=""  [(ngModel)]="appointment.nombreCliente" placeholder="Nombre" style="margin-left:0px;font-family:Roboto, sans-serif;">
+                        </div>
                     </div>
                     <div class="row" style="margin-right:0px;margin-left:0px;padding-top:24px;">
                         <div class="col-md-8 col-md-offset-1">
                             <p style="margin-left:2%;font-family:Roboto, sans-serif;font-size:24px;"><strong>Fecha y Hora</strong></p>
                         </div>
-                        <div class="col-md-10 col-md-offset-1"><input class="form-control datetimepicker form-control" type="text" placeholder="Selecciona Fecha y Hora"></div>
+                        <div class="col-md-10 col-md-offset-1">
+                          <input class="form-control datetimepicker form-control" type="text" name ="fechaHora"
+                                   id="fechaHora" [value]="appointment.fechaHora"  [(ngModel)]="appointment.fechaHora" placeholder="Selecciona Fecha y Hora">
+                        </div>
                     </div>
                     <div class="row" style="margin-right:0px;margin-left:0px;padding-top:24px;">
                         <div class="col-md-8 col-md-offset-1">
                             <p style="margin-left:2%;font-family:Roboto, sans-serif;font-size:24px;"><strong>Número Telefónico</strong></p>
                         </div>
-                        <div class="col-md-10 col-md-offset-1"><input class="form-control" type="text" name="phone" required="" placeholder="Número Telefónico" inputmode="tel" style="margin-left:0px;font-family:Roboto, sans-serif;"></div>
+                        <div class="col-md-10 col-md-offset-1">
+                          <input class="form-control" type="text" name="numTel" required="" [(ngModel)]="appointment.numTelefono" placeholder="Número Telefónico" inputmode="tel" style="margin-left:0px;font-family:Roboto, sans-serif;">
+                        </div>
                     </div>
-                    <div class="row" style="margin-right:0px;margin-left:0px;padding-top:24px;">
+                    <div class="form-group" style="margin-right:0px;margin-left:0px;padding-top:24px;">
                         <div class="col-md-8 col-md-offset-1">
                             <p style="margin-left:2%;font-family:Roboto, sans-serif;font-size:24px;"><strong>Selecciona tu Barbero</strong></p>
                         </div>
-                        <div class="col-md-10 col-md-offset-1"><select class="form-control"><optgroup label="Select your favorite barber or stylist"><option value="1" selected="">Cualquiera </option><option value="2">Daniel Loza</option><option value="3">Paola Santana</option></optgroup></select></div>
+                        <div class="col-md-10 col-md-offset-1">
+                            <select class="form-control" name="barber" id="cmbBarber" [(ngModel)]="barber" [(ngModel)]="appointment.barbero" >
+                                <option *ngFor="let barber of barbers" [value]="barber.nombre">{{barber.nombre}}</option>
+                            </select>
+                        </div>
                     </div>
                     <div class="row" style="margin-right:0px;margin-left:0px;padding-top:24px;">
                         <div class="col-md-8 col-md-offset-1">
                             <p style="margin-left:2%;font-family:Roboto, sans-serif;font-size:24px;"><strong>Email</strong></p>
                         </div>
-                        <div class="col-md-10 col-md-offset-1"><input class="form-control" type="text" name="email" required="" placeholder="Email" inputmode="email" style="margin-left:0px;font-family:Roboto, sans-serif;"></div>
+                        <div class="col-md-10 col-md-offset-1">
+                          <input class="form-control" type="text" name="emai" required="" [(ngModel)]="appointment.email" placeholder="Email" inputmode="email" style="margin-left:0px;font-family:Roboto, sans-serif;">
+                        </div>
                     </div>
-
                     <div class="row" style="margin-right:0px;margin-left:0px;padding-top:24px;">
                         <div class="col-md-8 col-md-offset-1">
                             <p style="margin-left:2%;font-family:Roboto, sans-serif;font-size:24px;"><strong>Selecciona donde será tu servicio</strong></p>
                         </div>
                         <div class="col-md-10 col-md-offset-1">
                             <form action="../../form-result.php" method="post" target="_blank">
-
                                  <h5><input type="radio" name="appointments" style="margin-left:0px;font-family:Roboto, sans-serif;" onclick="toggle(this)" value="b"> Barberia<br></h5>
                                  <h5><input type="radio" name="appointments" style="margin-left:0px;font-family:Roboto, sans-serif;" onclick="toggle(this)" value="d"> Domicilio<br> </h5>
-
                             </form>
                         </div>
                         <div class="auto" id="data" style="display: none">
@@ -106,31 +118,44 @@
                             <div class="col-md-8 col-md-offset-1">
                                 <p style="margin-left:2%;font-family:Roboto, sans-serif;font-size:24px;"><strong>Calle y Número</strong></p>
                             </div>
-                            <div class="col-md-10 col-md-offset-1"><input class="form-control" type="text" name="name" required="" placeholder="Calle y Número" style="margin-left:0px;font-family:Roboto, sans-serif;">
-            </div>
+                            <div class="col-md-10 col-md-offset-1">
+                              <input class="form-control" type="text" name="callNum" required="" [(ngModel)]="appointment.calleNum" placeholder="Calle y Número" style="margin-left:0px;font-family:Roboto, sans-serif;">
+                            </div>
                             <div class="col-md-8 col-md-offset-1">
                                 <p style="margin-left:2%;font-family:Roboto, sans-serif;font-size:24px;"><strong>C.P.</strong></p>
                             </div>
-                            <div class="col-md-10 col-md-offset-1"><input class="form-control" type="text" name="name" required="" placeholder="C.P." style="margin-left:0px;font-family:Roboto, sans-serif;">
-            </div>
+                            <div class="col-md-10 col-md-offset-1">
+                              <input class="form-control" type="text" name="cpostal" required="" [(ngModel)]="appointment.cp" placeholder="C.P." style="margin-left:0px;font-family:Roboto, sans-serif;">
+                            </div>
                             <div class="col-md-8 col-md-offset-1">
                                 <p style="margin-left:2%;font-family:Roboto, sans-serif;font-size:24px;"><strong>Descripción Domicilio</strong></p>
                             </div>
-                            <div class="col-md-10 col-md-offset-1"><input class="form-control" type="text" name="name" required="" placeholder="Descripción..." style="margin-left:0px;font-family:Roboto, sans-serif;">
-            </div>
-          </div>
+                            <div class="col-md-10 col-md-offset-1">
+                              <input class="form-control" type="text" name="descDomi" required="" [(ngModel)]="appointment.descDomicilio" placeholder="Descripción..." style="margin-left:0px;font-family:Roboto, sans-serif;">
+                            </div>
+                        </div>
                     </div>
-
                     <div class="row" style="margin-right:0px;margin-left:0px;padding-top:24px;">
                         <div class="col-md-8 col-md-offset-1">
                             <p style="margin-left:2%;font-family:Roboto, sans-serif;font-size:24px;"><strong>Notas </strong></p>
                         </div>
-                        <div class="col-md-10 col-md-offset-1"><textarea class="form-control" placeholder="Notas..." style="font-family:Roboto, sans-serif;font-size:14px;"></textarea>
-          </div>
+                        <div class="col-md-10 col-md-offset-1">
+                          <textarea class="form-control" name="nota" placeholder="Notas..." [(ngModel)]="appointment.notas" style="font-family:Roboto, sans-serif;font-size:14px;"></textarea>
+                        </div>
+                    </div>
+                    <div class="row" style="margin-right:0px;margin-left:0px;padding-top:24px; display:none">
+                        <div class="col-md-8 col-md-offset-1">
+                            <p style="margin-left:2%;font-family:Roboto, sans-serif;font-size:24px;"><strong>Estatus </strong></p>
+                        </div>
+                        <div class="col-md-10 col-md-offset-1">
+                          <textarea class="form-control" placeholder="Estatus" name="est" value ="1" [(ngModel)]="appointment.estatus" style="font-family:Roboto, sans-serif;font-size:14px;"></textarea>
+                        </div>
                     </div>
                     <div class="row" style="margin-right:0px;margin-left:0px;padding-top:24px;">
-                        <div class="col-md-4 col-md-offset-4 col-xs-12 col-xs-offset-0"><button class="btn btn-default-clear btn-lg" type="reset" style="font-family:Roboto, sans-serif;">Limpiar </button><button class="btn btn-default btn-lg" type="submit" style="margin-left:16px;">Enviar </button>
-          </div>
+                        <div class="col-md-4 col-md-offset-4 col-xs-12 col-xs-offset-0">
+                          <button class="btn btn-default-clear btn-lg" type="reset" style="font-family:Roboto, sans-serif;">Limpiar </button>
+                          <button class="btn btn-default btn-lg" type="reset"  role = "button" name="save" (click)='create()'  style="margin-left:16px;">Agregar </button>
+                        </div>
                     </div>
                 </div>
             </div>
