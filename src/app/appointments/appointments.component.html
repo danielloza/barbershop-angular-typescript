@@ -71,8 +71,8 @@
                             <p style="margin-left:2%;font-family:Roboto, sans-serif;font-size:24px;"><strong>Fecha y Hora</strong></p>
                         </div>
                         <div class="col-md-10 col-md-offset-1">
-                          <input class="form-control datetimepicker form-control" type="text" name ="fechaHora"
-                                   id="fechaHora" [value]="appointment.fechaHora"  [(ngModel)]="appointment.fechaHora" placeholder="Selecciona Fecha y Hora">
+                          <input class="form-control  form-control" type="datetime-local" name ="fechaHora"
+                                   id="fechaHora" [value]="appointment.fechaHora"   [(ngModel)]="appointment.fechaHora" placeholder="Selecciona Fecha y Hora">
                         </div>
                     </div>
                     <div class="row" style="margin-right:0px;margin-left:0px;padding-top:24px;">
@@ -80,7 +80,7 @@
                             <p style="margin-left:2%;font-family:Roboto, sans-serif;font-size:24px;"><strong>Número Telefónico</strong></p>
                         </div>
                         <div class="col-md-10 col-md-offset-1">
-                          <input class="form-control" type="text" name="numTel" required="" [(ngModel)]="appointment.numTelefono" placeholder="Número Telefónico" inputmode="tel" style="margin-left:0px;font-family:Roboto, sans-serif;">
+                          <input class="form-control" type="tel" name="numTel" required="" [(ngModel)]="appointment.numTelefono" placeholder="Número Telefónico" inputmode="tel" style="margin-left:0px;font-family:Roboto, sans-serif;">
                         </div>
                     </div>
                     <div class="form-group" style="margin-right:0px;margin-left:0px;padding-top:24px;">
@@ -98,7 +98,7 @@
                             <p style="margin-left:2%;font-family:Roboto, sans-serif;font-size:24px;"><strong>Email</strong></p>
                         </div>
                         <div class="col-md-10 col-md-offset-1">
-                          <input class="form-control" type="text" name="emai" required="" [(ngModel)]="appointment.email" placeholder="Email" inputmode="email" style="margin-left:0px;font-family:Roboto, sans-serif;">
+                          <input class="form-control" type="email" name="emai" required="" [(ngModel)]="appointment.email" placeholder="Email" inputmode="email" style="margin-left:0px;font-family:Roboto, sans-serif;">
                         </div>
                     </div>
                     <div class="row" style="margin-right:0px;margin-left:0px;padding-top:24px;">
