@@ -1,0 +1,22 @@
+<div class="wrapper fadeInDown">
+
+
+    <!-- Tabs Titles -->
+    <!-- Icon -->
+
+      <div id="promo">
+          <div class="jumbotron">
+              <h1 style= "color: #027EA7">Bienvenido Administrador</h1>
+          </div>
+      <h1 style= "color: #027EA7"><em>DMC|Loza BarberShop</em></h1>
+
+
+    <!-- Login Form -->
+    <form method="post">
+      <input [(ngModel)]="usuario.username" type="text" id="username" class="fadeIn second" name="username" placeholder="Username" autofocus required>
+      <input [(ngModel)]="usuario.password" type="password" id="password" class="fadeIn third" name="password" placeholder="Password" required>
+      <input (click)="login()" type="submit" class="btn btn-primary my-3"  value="Login">
+    </form>
+
+  </div>
+</div>

@@ -19,7 +19,7 @@ import { PackageService } from './admin-packages/package-service';
 import { FormsModule } from '@angular/forms';
 import { FormComponent } from './admin-packages/form.component';
 import { FormBarberComponent } from './admin-barbers/form-barber.component';
-import {AppointmentsService } from './appointments/appointments-service';
+import { LoginComponent } from './usuarios/login.component';
 
 //Call Component
 const route: Routes = [
@@ -37,7 +37,8 @@ const route: Routes = [
   {path: 'admin-packages/form', component: FormComponent },
   {path: 'admin-packages/form/:id', component: FormComponent },
   {path: 'admin-barbers/form', component: FormBarberComponent },
-  {path: 'admin-barbers/form/:id', component: FormBarberComponent }
+  {path: 'admin-barbers/form/:id', component: FormBarberComponent },
+  {path: 'login', component: LoginComponent }
 
 ];
 
@@ -56,7 +57,8 @@ const route: Routes = [
     PrivacypolicyComponent,
     TermAndConditionsComponent,
     FormComponent,
-    FormBarberComponent
+    FormBarberComponent,
+    LoginComponent,
   ],
 
   imports: [

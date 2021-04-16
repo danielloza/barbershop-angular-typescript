@@ -5,6 +5,7 @@ import { Barbers } from '../admin-barbers/barbers';
 import { BarbersService } from '../admin-barbers/barbers-service';
 import { Package } from '../admin-packages/package';
 import { PackageService } from '../admin-packages/package-service';
+import { Usuario } from '../usuarios/usuario';
 import { Appointments } from './appointments';
 import { AppointmentsService } from './appointments-service';
 
@@ -21,6 +22,8 @@ export class AppointmentsComponent implements OnInit {
   BarberSelected: Number;
   appointment: Appointments = new Appointments()
   appointments: Appointments[];
+  usuario: Usuario = new Usuario()
+  usuarios: Usuario[];
 
 
   constructor(private packagetoService: PackageService, private barbertoService: BarbersService,

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { throwError } from 'rxjs';
 import Swal from 'sweetalert2';
 import { Appointments } from '../appointments/appointments';
 import { AppointmentsService } from '../appointments/appointments-service';
